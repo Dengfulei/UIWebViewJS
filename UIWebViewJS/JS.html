@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title></title>
+</head>
+<script type="text/javascript">
+	function OCCallJS(string) {
+		document.getElementById('hello').innerHTML = string;
+	}
+
+</script>  
+<body>
+	<a href="https://www.baidu.com">webView内加载其他html</a>
+	<br>
+	<a href="http://www.hianto2o.com">海蚂蚁按钮</a>
+	<br>
+	<input type="button" name="跳转按钮1" value="测试跳转1" onclick="test('helloWorld')">
+    <br>
+    <input type="button" name="跳转按钮2" value="测试跳转有js参数" onclick="hiant.JSOC({'name':'hianto2o','current':true})">
+    <br>
+     <input type="button" name="跳转按钮2" value="测试跳转没有js参数" onclick="hiant.JSOCNOPramas()">
+    <br>
+	<h1 id='hello'></h1>
+</body>
+</html>

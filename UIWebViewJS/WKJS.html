@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>WKWebView</title>
+</head>
+<script type="text/javascript">
+
+  /**
+    *  js固定写法 <name>为clickButton1 clickButton2 test 为wkWebView的配置参数
+    *  <messageBody>位传递参数
+    *  window.webkit.messageHandlers.<name>.postMessage(<messageBody>)
+    */
+	function clickButton1() {
+     
+		 window.webkit.messageHandlers.clickButton1.postMessage({'name':'dfl'});
+	}
+
+	function clickButton2() {
+		 window.webkit.messageHandlers.clickButton2.postMessage('helloWord');
+	}
+
+    function test() {
+        <!-- postMessage没有参数必须传null或''-->
+    	 window.webkit.messageHandlers.test.postMessage(null);
+    }
+
+	function OCCALLJS(string) {
+        document.getElementById('hello').innerHTML = string;
+	}
+	
+</script>
+<body>
+	<a href="https://www.baidu.com">webView内加载其他html</a>
+	<br>
+	<a href="http://www.hianto2o.com">海蚂蚁按钮</a>
+	<br>
+	 <input type="button" name="跳转按钮1" value="测试跳转没有参数" onclick="test()">
+    <br>
+     <input type="button" name="跳转按钮2" value="测试跳转有一个js参数" onclick="clickButton1()">
+    <br>
+     <input type="button" name="跳转按钮2" value="测试跳转有多个js参数" onclick="clickButton2()">
+    <br>
+	<h1 id='hello'></h1>
+
+</body>
+</html>
